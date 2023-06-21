@@ -1,0 +1,13 @@
+# docker-compose.yaml
+services:
+  ubuntu-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/home/app
+      - ./www/html:/var/www/html
+    ports:
+      - 80:80
+      - 1935:1935
+      - 8080:8080
